@@ -1,8 +1,38 @@
+import CountChart from '@/components/CountChart'
+import UserCard from '@/components/UserCard'
 import React from 'react'
 
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <div className='p-4 flex gap-4 flex-col md:flex-row'>
+      {/* left */}
+      <div className='w-full lg:w-2/3 flex flex-col gap-8'>
+      {/* user card */}
+      <div className='flex gap-4 justify-between flex-wrap'>
+      <UserCard role='student' total={12332}/>
+      <UserCard role='teacher' total={123}/>
+      <UserCard role='parent' total={12332}/>
+      <UserCard role='staff' total={310}/>
+      </div>
+      <div>
+        {/* middle chart */}
+        <div className='flex gap-4 flex-col lg:flex-row'>
+          <div className='w-full lg:w-1/3 h-[450px]'>
+            <CountChart/>
+          </div>
+          <div className='w-full bg-white lg:w-2/3 h-[450px]'>
+            chart right
+          </div>
+        </div>
+        {/* bottom chart */}
+        <div>
+          bottom chart
+        </div>
+      </div>
+      </div>
+      {/* right */}
+      <div className='w-full lg:w-1/3 bg-blue-100'>right</div>
+    </div>
   )
 }
 
