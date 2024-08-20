@@ -122,7 +122,7 @@ const Menu = () => {
       {
         menuItems.map((item,index)=> {
           return(
-            <div className="flex flex-col gap-2" key={index}>
+            <div className="flex flex-col gap-2 md:p-4" key={index}>
               <span className="hidden lg:block text-gray-400 font-light my-4">{item.title}</span>
               {
                 item.items.map((menu,i)=> {

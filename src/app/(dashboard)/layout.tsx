@@ -9,9 +9,9 @@ export default function DashboardLayout({
     children: React.ReactNode;
   }>) {
     return (
-        <div className="h-screen flex">
+        <div className="flex">
           {/* LEFT */}
-          <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%]">
+          <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] sticky top-0">
             <Link className="flex items-center justify-center lg:justify-start p-4 gap-2" href={'/'}>
             <Image src='/logo.png' alt="logo" width={32} height={32}/>
             <span className="hidden lg:block">My School</span>

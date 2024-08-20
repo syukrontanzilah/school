@@ -1,3 +1,4 @@
+import AttendanceChart from '@/components/AttendanceChart'
 import CountChart from '@/components/CountChart'
 import UserCard from '@/components/UserCard'
 import React from 'react'
@@ -14,20 +15,20 @@ const AdminPage = () => {
       <UserCard role='parent' total={12332}/>
       <UserCard role='staff' total={310}/>
       </div>
-      <div>
+      <div className='flex flex-col gap-8'>
         {/* middle chart */}
         <div className='flex gap-4 flex-col lg:flex-row'>
           <div className='w-full lg:w-1/3 h-[450px]'>
             <CountChart/>
           </div>
           <div className='w-full bg-white lg:w-2/3 h-[450px]'>
-            chart right
+            <AttendanceChart/>
           </div>
         </div>
         {/* bottom chart */}
         <div>
-          bottom chart
         </div>
+
       </div>
       </div>
       {/* right */}
