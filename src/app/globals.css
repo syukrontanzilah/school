@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.react-calendar {
+    width: 100% !important;
+    border: none !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.react-calendar__tile{
+    border: 1px dashed transparent !important;
+}
+
+.react-calendar__tile:hover{
+    background-color: rgb(226, 242, 247) !important;
+    border-radius: 5px;
+    border: 1px dashed transparent !important;
+}
+
+.react-calendar__tile--now{
+    background-color: white !important;
+    border-radius: 5px;
+    border: 1px dashed #d9eef6 !important;
+}
+
+.react-calendar__tile--active{
+    background-color: #c3ebfa !important;
+    color: black !important;
+    border-radius: 5px;
+    border: 1px dashed transparent !important;
+}
+
