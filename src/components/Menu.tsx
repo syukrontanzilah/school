@@ -118,7 +118,7 @@ const menuItems = [
 
 const Menu = () => {
   return(
-    <div className="mt-4 text-sm">
+    <div className="text-sm">
       {
         menuItems.map((item,index)=> {
           return(
