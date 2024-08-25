@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+#navbar{
+    transition: .5s;
+}
 .react-calendar {
     width: 100% !important;
     border: none !important;

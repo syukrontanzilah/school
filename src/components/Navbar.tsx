@@ -1,9 +1,28 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Navbar = () => {
+    useEffect(() => {
+        const handleScroll = () => {
+          const navbar = document.getElementById('navbar');
+          if (navbar) {
+            if (window.scrollY > 50) {
+              navbar.classList.add('bg-white', 'bg-opacity-80', 'backdrop-blur-lg', 'shadow-md');
+            } else {
+              navbar.classList.remove('bg-white', 'bg-opacity-80', 'backdrop-blur-lg', 'shadow-md');
+            }
+          }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Cleanup event listener on component unmount
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
   return (
-    <div className='flex items-center justify-between p-4'>
+    <div id='navbar' className='flex items-center justify-between p-4 backdrop-blur-lg fixed top-0 right-0 w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] z-10'>
         {/* search bar */}
         <div className='hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2'>
             <Image src={'/search.png'} alt='search' width={14} height={14}/>
