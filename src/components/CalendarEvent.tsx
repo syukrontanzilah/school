@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -31,10 +31,15 @@ const events = [
 
 const CalendarEvent = () => {
     const [value, onChange] = useState<Value>(new Date());
+    const [locale, setLocale] = useState('id-ID');
+    
+    useEffect(() => {
+      setLocale(navigator.language || 'id-ID');
+    }, []);
 
   return (
     <div className='bg-white p-4 rounded-md'>
-    <Calendar onChange={onChange} value={value} />
+    <Calendar onChange={onChange} value={value} locale={locale}/>
     
     {/* event list */}
     <div className='flex items-center justify-between'>

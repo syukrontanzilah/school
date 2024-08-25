@@ -53,3 +53,21 @@
     background-color: rgb(226, 242, 247) !important;
     border-radius: 5px;
 }
+
+/* Untuk Chrome, Safari, dan Edge */
+.sidebar {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+    overflow-y: scroll; /* Mengaktifkan scroll */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Menyembunyikan scrollbar di WebKit */
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Untuk Firefox */
+.sidebar {
+    scrollbar-width: none; /* Menyembunyikan scrollbar */
+  }
+  

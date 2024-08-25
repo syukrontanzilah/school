@@ -11,7 +11,7 @@ export default function DashboardLayout({
     return (
         <div className="flex">
           {/* LEFT */}
-          <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] sticky top-0">
+          <div className="sidebar w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] top-0 sticky overflow-y-auto h-screen bg-white">
             <Link className="flex items-center justify-center lg:justify-start p-4 gap-2" href={'/'}>
             <Image src='/logo.png' alt="logo" width={32} height={32}/>
             <span className="hidden lg:block font-bold">My School</span>
