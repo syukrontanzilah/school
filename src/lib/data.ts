@@ -1062,18 +1062,3 @@ export const calendarEvents = [
     end: new Date(2024, 7, 31, 14, 45),
   },
 ];
-
-// export const calendarEvents = [
-//   {
-//     id: 1,
-//     title: "Meeting",
-//     start: new Date(2024, 1, 10, 10, 0, 0),
-//     end: new Date(2024, 1, 10, 12, 0, 0),
-//   },
-//   {
-//     id: 2,
-//     title: "Lunch Break",
-//     start: new Date(2024, 1, 10, 12, 0, 0),
-//     end: new Date(2024, 1, 10, 13, 0, 0),
-//   },
-// ];
