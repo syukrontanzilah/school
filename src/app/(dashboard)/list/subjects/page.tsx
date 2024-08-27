@@ -1,40 +1,26 @@
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
-import { parentsData, role, teachersData } from '@/lib/data'
+import { parentsData, role, subjectsData, teachersData } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Parent = {
+type Subject = {
   id: number;
   name: string;
-  email?: string;
-  phone: string;
-  classes: string[];
-  address: string;
-  students: string[]
+  teachers: string[]; 
 };
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Subject Name",
+    accessor: "name",
   },
   {
-    header: "Students Name",
-    accessor: "studentsName",
+    header: "Teachers",
+    accessor: "teachers",
     className: "hidden md:table-cell",
-  },
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
   },
   {
     header: "Actions",
@@ -42,20 +28,13 @@ const columns = [
   },
 ];
 
-const ParentListPage = () => {
+const SubjectListPage = () => {
 
-  const renderRow = (item: Parent) => {
+  const renderRow = (item: Subject) => {
     return(
       <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50 hover:bg-purpleLight text-sm'>
-        <td className='flex items-center gap-4 py-4'>
-          <div className='flex flex-col'>
-            <h3 className='font-semibold'>{item.name}</h3>
-            <p className='text-xs text-gray-500'>{item?.email}</p>
-          </div>
-        </td>
-        <td className='hidden md:table-cell'>{item.students.join(", ")}</td>
-        <td className='hidden md:table-cell'>{item.phone}</td>
-        <td className='hidden md:table-cell'>{item.address}</td>
+        <td className='md:table-cell py-4'>{item.name}</td>
+        <td className='hidden md:table-cell'>{item.teachers.join(", ")}</td>
         <td>
           <div className='flex items-center gap-2'>
             <Link href={`/list/teachers/${item.id}`}>
@@ -81,7 +60,7 @@ const ParentListPage = () => {
 
         {/* TOP */}
       <div className='flex items-center justify-between'>
-        <h1 className='text-lg font-semibold hidden md:block'>All Parents</h1>
+        <h1 className='text-lg font-semibold hidden md:block'>All Subjects</h1>
         <div className='flex flex-col md:flex-row items-center gap-4  w-full md:w-auto'>
           <TableSearch/>
           <div className='flex items-center gap-4 self-end md:self-auto'>
@@ -99,7 +78,7 @@ const ParentListPage = () => {
 
       {/* LIST */}
       <div>
-        <Table columns = {columns} renderRow={renderRow} data={parentsData}/>
+        <Table columns = {columns} renderRow={renderRow} data={subjectsData}/>
       </div>
 
       {/* PAGINATION */}
@@ -112,4 +91,4 @@ const ParentListPage = () => {
   )
 }
 
-export default ParentListPage
+export default SubjectListPage
